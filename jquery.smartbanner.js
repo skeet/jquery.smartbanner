@@ -107,7 +107,7 @@
         }
         
       , show: function(callback) {
-            $('#smartbanner').stop().animate({top:0},this.options.speedIn).addClass('shown')
+            $('#smartbanner').stop().animate({}, this.options.speedIn).addClass('shown')
             $('html').animate({marginTop:this.origHtmlMargin+(this.bannerHeight*this.scale)},this.options.speedIn,'swing',callback)
         }
         
