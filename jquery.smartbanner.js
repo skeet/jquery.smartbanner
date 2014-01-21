@@ -14,7 +14,7 @@
         // Detect banner type (iOS or Android)
         if (this.options.force) {
             this.type = this.options.force
-        } else if (UA.match(/iPad|iPhone|iPod/i) != null) {
+        } else if (UA.match(/iPhone|iPod/i) != null) {
             if (UA.match(/Safari/i) != null &&
                (UA.match(/CriOS/i) != null ||
                window.Number(navigator.userAgent.substr(navigator.userAgent.indexOf('OS ') + 3, 3).replace('_', '.')) < 6)) this.type = 'ios' // Check webview and native smart banner support (iOS 6+)
