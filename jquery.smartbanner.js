@@ -15,13 +15,16 @@
         if (this.options.force) {
             this.type = this.options.force
         } else if (UA.match(/iPhone|iPod/i) != null) {
+            $('head').append('<meta name="apple-itunes-app" content="app-id=633609412" /><meta name="google-play-app" content="app-id=com.starcount.singapore" />');
             if (UA.match(/Safari/i) != null &&
                (UA.match(/CriOS/i) != null ||
                window.Number(navigator.userAgent.substr(navigator.userAgent.indexOf('OS ') + 3, 3).replace('_', '.')) < 6)) this.type = 'ios' // Check webview and native smart banner support (iOS 6+)
         } else if (UA.match(/Android/i) != null) {
             this.type = 'android'
+            $('head').append('<meta name="apple-itunes-app" content="app-id=633609412" /><meta name="google-play-app" content="app-id=com.starcount.singapore" />');
         } else if (UA.match(/Windows NT 6.2/i) != null && UA.match(/Touch/i) !== null) {
             this.type = 'windows'
+            $('head').append('<meta name="apple-itunes-app" content="app-id=633609412" /><meta name="google-play-app" content="app-id=com.starcount.singapore" />');
         }
 
         // Don't show banner if device isn't iOS or Android, website is loaded in app or user dismissed banner
